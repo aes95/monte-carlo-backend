@@ -6,5 +6,6 @@ router = routers.DefaultRouter()
 router.register('index', views.IndexViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('', views.home_view, name='home')
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Index
 from rest_framework import viewsets
@@ -11,4 +11,6 @@ class IndexViewSet(viewsets.ModelViewSet):
     serializer_class = IndexSerializer
     filter_backends = [DjangoFilterBackend]
     filter_fields = ['id', 'date', 'index_name']
-    #lookup_field = 'index_name'
+
+def home_view(request):
+    return redirect('/api')
